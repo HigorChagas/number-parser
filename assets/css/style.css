@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*,
+*::before
+*::after {
+    box-sizing: border-box;
+    max-width: 800px;
+}
+
+body {
+    background-color: #41B3A3;
+}
+
+/***************************************/
+/* 0. Variáveis
+/* 1. Header
+/* 2. Section
+/***************************************/
+
+/***************************************/
+/* 0. Variáveis
+/***************************************/
+
+:root {
+    --ff-primary: 'Poppins', sans-serif;
+}
+
+/***************************************/
+/* 1. Header
+/***************************************/
+
+.title {
+    font-family: var(--ff-primary);
+    text-align: center;
+    color: #FFF;
+}
+
+/***************************************/
+/* 2. Section
+/***************************************/
+
+.container {
+    margin: 0 auto;
+    width: 550px;
+    height: auto;
+    background-color: #FFF;
+    border-radius: 15px;
+    box-shadow: 2px 3px 7px 0px #090027;
+    text-align: center;
+    padding-top: 10px;
+    font-family: var(--ff-primary);
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.form-group {
+    padding: 15px;
+}
+
+label {
+    font-family: var(--ff-primary);
+    font-size: 18px;
+
+}
+
+input[type=number] {
+    width: 50%;
+    padding: 5px 5px;
+    margin: 3px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+select {
+    margin: 10px auto;
+    width: 50%;
+}
+
+option {
+    font-family: var(--ff-primary);
+    text-align: center;
+    font-size: 20px;
+}
+
+.btn {
+    padding: 15px 20px;
+    border: none;
+    font-family: var(--ff-primary);
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #41b3a3;
+    color: #FFF;
+}
+
+.btn:hover {
+    transition: 500ms;
+    background-color: #208073;
+}
+
+.btn-select {
+    width: 50%;
+    margin: 10px auto;
+}
+
+/***************************************/
+/* 2. Footer
+/***************************************/
+
+.footer-copyright {
+    text-align: center;
+    font-family: var(--ff-primary);
+    color: #FFF;
+}
+
+
