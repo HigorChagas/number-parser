@@ -1,34 +1,39 @@
 const btnAdicionar = document.querySelector('#adicionar');
+const btnFinalizar = document.querySelector('#finalizar');
+const resultado = document.querySelector('.resultado');
+
+const numeros = [];
 
 btnAdicionar.addEventListener('click', () => {
     const inputNumero = document.querySelector('.input-numero');
     const select = document.querySelector('#resultado');
     const numero = Number(inputNumero.value);
-
+    
+    const numeroExiste = numeros.includes(numero, 0)
     const valorMaiorOuMenor = numero > 100 || numero < 1;
 
-    const numeros = [];
-    numeros
-
-    if(valorMaiorOuMenor || !numero) {  
-        alert('Valor inválido ou já encontrado na lista');
+    if(valorMaiorOuMenor || !numero || numeroExiste) {  
+        alert('Valor inválido ou já adicionado na lista.');
     } else {
-        
-        let existe = false;
-
-        for(let posicao = 0; posicao < numeros.length; posicao++) {
-            if(numeros[posicao] === numeros) {
-                existe = true;
-                break;
-            }
-        }
-
-        if(existe === false) {
-            let item = document.createElement('option');
-            numeros.push(numero);
-            item.text = numeros;
-            select.appendChild(item);
-        }
-        
+        numeros.push(numero);
+        let item = document.createElement('option');
+        item.text += `Valor ${numero} foi adicionado.`;
+        select.appendChild(item);
     }
+});
+
+btnFinalizar.addEventListener('click', () => {
+    const maiorNumero = Math.max(...numeros);
+    const menorNumero = Math.min(...numeros); 
+    const soma = numeros.reduce(function(acumulador, valor, indice, array) {
+        acumulador += valor;
+        return acumulador;
+    }, 0);
+     
+
+    resultado.innerHTML = `No total temos ${numeros.length} números cadastrados.<br>
+    O maior número cadastrado é ${maiorNumero}<br>
+    O menor número cadastrado é ${menorNumero}<br>
+    Somando todos os valores, temos ${soma}<br>`;
+
 });
