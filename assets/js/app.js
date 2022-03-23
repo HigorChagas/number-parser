@@ -25,15 +25,16 @@ btnAdicionar.addEventListener('click', () => {
 btnFinalizar.addEventListener('click', () => {
     const maiorNumero = Math.max(...numeros);
     const menorNumero = Math.min(...numeros); 
-    const soma = numeros.reduce(function(acumulador, valor, indice, array) {
+    const soma = numeros.reduce(function(acumulador, valor) {
         acumulador += valor;
         return acumulador;
     }, 0);
-     
+     const media = soma / numeros.length
 
     resultado.innerHTML = `No total temos ${numeros.length} números cadastrados.<br>
     O maior número cadastrado é ${maiorNumero}<br>
     O menor número cadastrado é ${menorNumero}<br>
-    Somando todos os valores, temos ${soma}<br>`;
+    Somando todos os valores, temos ${soma}<br>
+    A média dos números é ${media.toFixed(2)}`;
 
 });
