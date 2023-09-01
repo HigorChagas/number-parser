@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: #41B3A3;
+    background-color: var(--clr-primary);
 }
 
 /***************************************/
@@ -23,6 +23,9 @@ body {
 
 :root {
     --ff-primary: 'Poppins', sans-serif;
+    --clr-primary: #41B3A3;
+    --hover-clr: #208073;
+    --txt-white: #FFF;
 }
 
 /***************************************/
@@ -32,7 +35,7 @@ body {
 .title {
     font-family: var(--ff-primary);
     text-align: center;
-    color: #FFF;
+    color: var(--txt-white);
 }
 
 /***************************************/
@@ -43,7 +46,7 @@ body {
     margin: 0 auto;
     width: 550px;
     height: auto;
-    background-color: #FFF;
+    background-color: var(--txt-white);
     border-radius: 15px;
     box-shadow: 2px 3px 7px 0px #090027;
     text-align: center;
@@ -94,13 +97,13 @@ option {
     font-size: 16px;
     display: inline-block;
     cursor: pointer;
-    background-color: #41b3a3;
-    color: #FFF;
+    background-color: var(--clr-primary);
+    color: var(--txt-white);
 }
 
 .btn:hover {
     transition: 500ms;
-    background-color: #208073;
+    background-color: var(--hover-clr);
 }
 
 .btn-select {
@@ -115,5 +118,5 @@ option {
 .footer-copyright {
     text-align: center;
     font-family: var(--ff-primary);
-    color: #FFF;
+    color: var(--txt-white);
 }
