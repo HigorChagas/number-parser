@@ -36,6 +36,6 @@ endBtn.addEventListener('click', () => {
     } números cadastrados.<br>
     O maior número cadastrado é ${higherNumber}<br>
     O menor número cadastrado é ${smallerNumber}<br>
-    sumndo todos os valores, temos ${sum}<br>
+    Somando todos os valores, temos ${sum}<br>
     A média dos números é ${average.toFixed(2)}`;
 });
