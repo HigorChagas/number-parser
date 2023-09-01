@@ -1,40 +1,41 @@
-const btnAdicionar = document.querySelector('#adicionar');
-const btnFinalizar = document.querySelector('#finalizar');
-const resultado = document.querySelector('.resultado');
+const addBtn = document.querySelector('#btnAdd');
+const endBtn = document.querySelector('#btnEnd');
+const result = document.querySelector('.result');
 
-const numeros = [];
+const numbers = [];
 
-btnAdicionar.addEventListener('click', () => {
-    const inputNumero = document.querySelector('.input-numero');
-    const select = document.querySelector('#resultado');
-    const numero = Number(inputNumero.value);
-    
-    const numeroExiste = numeros.includes(numero, 0)
-    const valorMaiorOuMenor = numero > 100 || numero < 1;
+addBtn.addEventListener('click', () => {
+    const numberInput = document.querySelector('.input-number');
+    const inputSelect = document.querySelector('#result');
+    const numberValue = Number(numberInput.value);
 
-    if(valorMaiorOuMenor || !numero || numeroExiste) {  
+    const numberExists = numbers.includes(numberValue, 0);
+    const greaterOrLess = numberValue > 100 || numberValue < 1;
+
+    if (greaterOrLess || !numberValue || numberExists) {
         alert('Valor inválido ou já adicionado na lista.');
     } else {
-        numeros.push(numero);
+        numbers.push(numberValue);
         let item = document.createElement('option');
-        item.text += `Valor ${numero} foi adicionado.`;
-        select.appendChild(item);
+        item.text += `Valor ${numberValue} foi adicionado.`;
+        inputSelect.appendChild(item);
     }
 });
 
-btnFinalizar.addEventListener('click', () => {
-    const maiorNumero = Math.max(...numeros);
-    const menorNumero = Math.min(...numeros); 
-    const soma = numeros.reduce(function(acumulador, valor) {
-        acumulador += valor;
-        return acumulador;
+endBtn.addEventListener('click', () => {
+    const higherNumber = Math.max(...numbers);
+    const smallerNumber = Math.min(...numbers);
+    const sum = numbers.reduce((acc, value) => {
+        acc += value;
+        return acc;
     }, 0);
-     const media = soma / numeros.length
+    const average = sum / numbers.length;
 
-    resultado.innerHTML = `No total temos ${numeros.length} números cadastrados.<br>
-    O maior número cadastrado é ${maiorNumero}<br>
-    O menor número cadastrado é ${menorNumero}<br>
-    Somando todos os valores, temos ${soma}<br>
-    A média dos números é ${media.toFixed(2)}`;
-
+    result.innerHTML = `No total temos ${
+        numbers.length
+    } números cadastrados.<br>
+    O maior número cadastrado é ${higherNumber}<br>
+    O menor número cadastrado é ${smallerNumber}<br>
+    sumndo todos os valores, temos ${sum}<br>
+    A média dos números é ${average.toFixed(2)}`;
 });
